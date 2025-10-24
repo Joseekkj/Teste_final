@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <h1 class="text-center navbar-dark bg-primary py-3">Sabor do Brasil</h1>
+    <h1 class="text-center navbar-dark bg-danger py-3">Sabor do Brasil</h1>
     <div class="container mt-4">
       <div class="row">
 
