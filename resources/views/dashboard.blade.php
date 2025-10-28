@@ -9,7 +9,7 @@
 <body>
  
     <main>
-      <h1 class="text-center navbar-dark bg-primary">Sabor do Brasil</h1>
+      <h1 class="text-center navbar-dark bg-danger">Sabor do Brasil</h1>
       <div class="container">
         <div class="row">
           <div class="col">

@@ -36,13 +36,14 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary">Entrar</button>
+          <button type="submit" class="btn btn-danger">Entrar</button>
         </div>
       </form>
     </div>
   </div>
 </div>
-  <h1 class="text-center navbar-dark btn-danger.">Sabor do Brasil</h1>
+     <h1 class="text-center text-white" style="background-color: purple;">Sabor do Brasil</h1>
+
       <div class="container">
   <div class="row">
    <div class="col">
