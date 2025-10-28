@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Support\Facades\Auth;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
@@ -11,21 +10,17 @@ use App\Models\Publicacao;
 
 class HomeController extends Controller
 {
-    
-    public function index()
+    public function index(Request $request)
     {
-        $publicacoes = Publicacao::all();
-        return view('home',compact('publicacoes'));
-    }
-     public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'senha');
-
-        if (Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['senha']])) {
-            return redirect()->route('dashboard');
+        if (Auth::check()) {
+            return redirect('/dashboard');
         }
-
-        return back()->withErrors(['email' => 'email ou senha incorretos']);
+        
+        $publicacoes = Publicacao::with(['empresa', 'comentarios'])->get();
+        $totalLikes = Publicacao::sum('likes');
+        $totalDislikes = Publicacao::sum('dislikes');
+        
+        return view('home', compact('publicacoes', 'totalLikes', 'totalDislikes'));
     }
 
     public function logout()
@@ -34,4 +29,3 @@ class HomeController extends Controller
         return redirect()->route('home');
     }
 }
-
