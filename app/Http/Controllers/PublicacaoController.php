@@ -24,7 +24,6 @@ class PublicacaoController extends Controller
 
         $publicacao = Publicacao::find($id);
         
-
         if ($publicacao) {
             $publicacao->likes = $publicacao->likes + 1;
             $publicacao->save();

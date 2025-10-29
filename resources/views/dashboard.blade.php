@@ -8,8 +8,10 @@
 </head>
 <body>
  
+
+
     <main>
-      <h1 class="text-center navbar-dark bg-danger">Sabor do Brasil</h1>
+     <h1 class="text-center text-white" style="background-color: purple;">Sabor do Brasil</h1>
       <div class="container">
         <div class="row">
           <div class="col">
@@ -28,6 +30,8 @@
             </div>
            </div>
           </div>
+
+
 
           <div class="col-6 border-left border-right border-dark">
             <h5 class="text-center mb-4">Publicações</h5>
@@ -89,12 +93,14 @@
     <div class="mt-4 border-top pt-3">
         <h6>Comentários:</h6>
 
+
+
         <form method="POST" action="{{ route('comentario.store', $publicacao->id) }}" class="mb-3">
             @csrf
             <div class="form-group">
                 <textarea class="form-control" name="texto" rows="2" placeholder="Adicione um comentário..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
+            <button type="submit" class="btn btn-danger btn-sm">Comentar</button>
         </form>
             @foreach($publicacao->comentarios as $comentario)
             <div class="border-bottom pb-2 mb-2 text-left">
@@ -119,6 +125,8 @@
                     </div>
                 </div>
 
+
+
                 <div class="collapse mt-2" id="editForm{{ $comentario->id }}">
                     <form method="POST" action="{{ route('comentario.update', $comentario->id) }}">
                         @csrf
@@ -141,6 +149,8 @@
     </div>
     @endif
 </div>
+
+
 @endforeach
         </div>
           </div>
@@ -156,7 +166,10 @@
       </div>
     </main>
 
-    <footer class="bg-dark text-white container-fluid sticky-footer">
+
+
+
+   <footer class="text-white container-fluid sticky-footer" style="background-color: purple">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -164,8 +177,8 @@
           </div>
           <div class="col-6">
             <nav class="nav row">
-              <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Instagram.svg') }}" alt="Insta"></a>
-              <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Whatsapp.svg') }}" alt="Whatss"></a>
+              <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Instagram.svg') }}" alt="Instagram"></a>
+              <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Whatsapp.svg') }}" alt="Whatsapp"></a>
               <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Twitter.svg') }}" alt="Twitter"></a>
               <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Globe.svg') }}" alt="Goggle"></a>
             </nav>
@@ -176,6 +189,9 @@
         </div>
       </div>
     </footer>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

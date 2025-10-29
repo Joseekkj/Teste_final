@@ -9,6 +9,8 @@ use App\Models\Home;
 use App\Models\Publicacao;
 
 class HomeController extends Controller
+
+
 {
     public function index(Request $request)
     {
@@ -21,8 +23,12 @@ class HomeController extends Controller
         $totalDislikes = Publicacao::sum('dislikes');
         
         return view('home', compact('publicacoes', 'totalLikes', 'totalDislikes'));
+
+
     }
 
+
+    
     public function logout()
     {
         Auth::logout();

@@ -28,7 +28,7 @@
           @endif
           
           <div class="form-group">
-            <input placeholder="Nome" type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{ old('nome') }}" required>
+            <input placeholder="Nome" type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome"  required>
           </div>
 
 
@@ -39,7 +39,7 @@
 
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
           <button type="submit" class="btn btn-danger">Entrar</button>
         </div>
       </form>
@@ -61,7 +61,7 @@
     </div>
      <div class="col">
       <h3 class="text-center">{{ $totalDislikes ?? 0 }}</h3>
-      <h6 class="text-center">Dislikes Totais</h6>
+      <h6 class="text-center">Dislikes</h6>
      </div>
     </div>
    </div>
@@ -116,6 +116,8 @@
         </button>
         @endauth
         
+
+
         <a href="{{ route('comentarios.toggle', $publicacao->id) }}" class="btn btn-light">
             <img src="{{ asset('imagens/chat.svg') }}" alt="chat">
             <small>({{ $publicacao->comentarios->count() }})</small>
@@ -126,12 +128,14 @@
     <div class="mt-4 border-top pt-3">
         <h6>Comentários:</h6>
 
+
+
         <form method="POST" action="{{ route('comentario.store', $publicacao->id) }}" class="mb-3">
             @csrf
             <div class="form-group">
                 <textarea class="form-control" name="texto" rows="2" placeholder="Adicione um comentário..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
+            <button type="submit" class="btn btn-danger btn-sm">Comentar</button>
         </form>
             @foreach($publicacao->comentarios as $comentario)
             <div class="border-bottom pb-2 mb-2 text-left">
@@ -163,9 +167,11 @@
                         <div class="form-group mb-2">
                             <textarea class="form-control" name="texto" rows="2" required>{{ $comentario->texto }}</textarea>
                         </div>
+
+
                         <div class="btn-group btn-group-sm">
-                            <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-                            <button type="button" class="btn btn-secondary btn-sm" 
+                            <button type="submit" class="btn btn-danger btn-sm">Salvar</button>
+                            <button type="button" class="btn btn-danger btn-sm" 
                                     data-toggle="collapse" 
                                     data-target="#editForm{{ $comentario->id }}">
                                 Cancelar
@@ -178,6 +184,8 @@
     </div>
     @endif
 </div>
+
+
 @endforeach
 </div>
   </div>
@@ -190,7 +198,9 @@
 </div>
     </main>
 
-    <footer class="bg-dark text-white container-fluid sticky-footer">
+
+
+    <footer class="text-white container-fluid sticky-footer" style="background-color: purple">
       <div class="container">
       <div class="row">
         <div class="col">
@@ -205,6 +215,8 @@
           </nav>
         </div>
         <div class="col">
+
+
           <p>&copy; Direitos Autorais 2025</p>
         </div>
       </div>

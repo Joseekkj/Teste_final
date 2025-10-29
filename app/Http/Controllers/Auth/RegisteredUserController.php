@@ -15,7 +15,7 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
     /**
-     * 
+     * Display the registration view.
      */
     public function create(): View
     {
@@ -23,7 +23,7 @@ class RegisteredUserController extends Controller
     }
 
     /**
-     * 
+     * Handle an incoming registration request.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -41,8 +41,6 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-
-        
         event(new Registered($user));
 
         Auth::login($user);
