@@ -109,7 +109,7 @@
                         <p class="mb-1 small">{{ $comentario->texto }}</p>
                     </div>
                     <div class="btn-group btn-group-sm ml-2">
-                        <button type="button" class="btn btn-outline-primary btn-sm" 
+                        <button type="button" class="btn btn-outline-danger btn-sm" 
                                 data-toggle="collapse" 
                                 data-target="#editForm{{ $comentario->id }}">
                             <img src="{{ asset('imagens/lapis_editar.svg') }}" alt="Editar" width="14">
@@ -118,7 +118,7 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger btn-sm" 
-                                    onclick="return confirm('Tem certeza que deseja excluir este comentário?')">
+                                    onclick="return confirm('Certeza que deseja excluir este comentário?')">
                                 <img src="{{ asset('imagens/lixeira_deletar.svg') }}" alt="Excluir" width="14">
                             </button>
                         </form>
@@ -135,7 +135,7 @@
                             <textarea class="form-control" name="texto" rows="2" required>{{ $comentario->texto }}</textarea>
                         </div>
                         <div class="btn-group btn-group-sm">
-                            <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+                            <button type="submit" class="btn btn-dark btn-sm">Salvar</button>
                             <button type="button" class="btn btn-secondary btn-sm" 
                                     data-toggle="collapse" 
                                     data-target="#editForm{{ $comentario->id }}">
