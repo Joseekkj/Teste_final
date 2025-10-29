@@ -24,6 +24,7 @@ class PublicacaoController extends Controller
 
         $publicacao = Publicacao::find($id);
         
+
         if ($publicacao) {
             $publicacao->likes = $publicacao->likes + 1;
             $publicacao->save();
@@ -32,6 +33,8 @@ class PublicacaoController extends Controller
         }
         $publicacao = Publicacao::findOrFail($id);
     
+
+        
         if (!session("liked_$id") && !session("disliked_$id")) {
         $publicacao->increment('likes');
         session(["liked_$id" => true]);

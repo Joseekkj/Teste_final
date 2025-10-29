@@ -11,10 +11,15 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
+
+
+
         $credentials = $request->validate([
             'nome' => 'required|string',
             'senha' => 'required|string'
         ]);
+
+
 
         $user = Usuario::where('nome', $credentials['nome'])->first();
 
@@ -24,10 +29,13 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'nome' => 'Nome de usuário ou senha incorretos.',
+            'nome' => 'Nome de usuário ou senha incorretos',
         ])->withInput();
     }
 
+
+
+    
     public function logout(Request $request)
     {
         Auth::logout();
