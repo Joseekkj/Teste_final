@@ -31,7 +31,7 @@
             <input placeholder="Nome" type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" name="nome" value="{{ old('nome') }}" required>
           </div>
 
-          
+
           <div class="form-group">
             <input placeholder="Senha" type="password" class="form-control @error('senha') is-invalid @enderror" id="senha" name="senha" required>
           </div>
@@ -198,10 +198,10 @@
         </div>
         <div class="col-6 ">
           <nav class="nav row">
-            <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Instagram.svg') }}" alt="Insta"></a>
-            <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Whatsapp.svg') }}" alt="Whatss"></a>
+            <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Instagram.svg') }}" alt="Instagram"></a>
+            <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Whatsapp.svg') }}" alt="Whatsapp"></a>
             <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Twitter.svg') }}" alt="Twitter"></a>
-            <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Globe.svg') }}" alt="Goggle"></a>
+            <a class="nav-link text-center col" href=""><img src="{{ asset('imagens/Globe.svg') }}" alt="Google"></a>
           </nav>
         </div>
         <div class="col">

@@ -10,19 +10,13 @@ use App\Http\Controllers\ComentarioController;
 use App\Models\Publicacao;
 
 
-
-
-
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-
 Route::post('/like/{id}', [PublicacaoController::class, 'like'])->name('like');
 Route::post('/dislike/{id}', [PublicacaoController::class, 'dislike'])->name('dislike');
-
 
 
 
@@ -33,16 +27,12 @@ Route::get('/comentarios/toggle/{publicacaoId}', [ComentarioController::class, '
 
 
 
-
 Route::get('/dashboard', function () {
     $usuario = Auth::user();
     $publicacoes = Publicacao::with(['empresa', 'comentarios'])->get();
     $totalLikes = Publicacao::sum('likes');
     $totalDislikes = Publicacao::sum('dislikes');
     
-
-
-
     return view('dashboard', compact('usuario', 'publicacoes', 'totalLikes', 'totalDislikes'));
 })->middleware(['auth'])->name('dashboard');
 

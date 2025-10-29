@@ -12,7 +12,7 @@ use Illuminate\View\View;
 class ConfirmablePasswordController extends Controller
 {
     /**
-     * Show the confirm password view.
+     * 
      */
     public function show(): View
     {
@@ -20,7 +20,7 @@ class ConfirmablePasswordController extends Controller
     }
 
     /**
-     * Confirm the user's password.
+     * 
      */
     public function store(Request $request): RedirectResponse
     {
@@ -33,6 +33,8 @@ class ConfirmablePasswordController extends Controller
             ]);
         }
 
+
+        
         $request->session()->put('auth.password_confirmed_at', time());
 
         return redirect()->intended(route('dashboard', absolute: false));
